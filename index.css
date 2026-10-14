@@ -1,0 +1,675 @@
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --orange: #f45b00;
+    --black: #080808;
+    --background: #f2f2f1;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--black);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Hero Background */
+.hero {
+    position: relative;
+    isolation: isolate;
+    min-height: 100vh;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse 60% 38% at 79% 68%,
+            rgba(255, 255, 255, 0.94) 0%,
+            rgba(255, 236, 219, 0.75) 32%,
+            transparent 70%
+        ),
+        linear-gradient(
+            180deg,
+            #f1f1f0 0%,
+            #f1f1f0 50%,
+            #f9d1b8 65%,
+            #ff5a00 100%
+        );
+}
+
+/* Navigation Bar */
+.navbar {
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+
+    padding: 15px 4.3%;
+}
+
+/* Logo */
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+
+    font-size: clamp(25px, 2.15vw, 36px);
+    letter-spacing: -1.5px;
+    white-space: nowrap;
+}
+
+.brand-mark {
+    position: relative;
+    display: inline-block;
+
+    width: 49px;
+    height: 49px;
+
+    border: 6px dotted #111;
+    border-radius: 50%;
+}
+
+.brand-mark::after {
+    content: "";
+
+    position: absolute;
+    inset: 5px;
+
+    border: 2px dashed #111;
+    border-radius: 50%;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: clamp(17px, 2.1vw, 36px);
+
+    padding: 7px 8px 7px 20px;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    font-family: "Courier New", monospace;
+    font-size: 13px;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+}
+
+.nav-links a {
+    transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover {
+    opacity: 0.65;
+}
+
+/* Login and Trial Buttons */
+.login,
+.nav-cta {
+    padding: 10px 20px;
+
+    border: 1px solid #222;
+    border-radius: 12px;
+}
+
+.nav-cta {
+    padding-inline: 22px;
+
+    background: var(--orange);
+    border-color: var(--orange);
+}
+
+/* Vertical Background Lines */
+.vertical-line {
+    position: absolute;
+    z-index: -1;
+
+    top: 65px;
+    bottom: 0;
+
+    width: 1px;
+
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.09) 0 5px,
+        transparent 5px 11px
+    );
+}
+
+.line-one {
+    left: 26.9%;
+}
+
+.line-two {
+    left: 50%;
+}
+
+/* Hero Text */
+.hero-copy {
+    position: absolute;
+    z-index: 3;
+
+    top: 29.3%;
+    left: 4.3%;
+
+    max-width: 520px;
+}
+
+.hero-copy h1 {
+    margin-bottom: 39px;
+
+    font-size: clamp(40px, 3.15vw, 54px);
+    line-height: 1.12;
+    font-weight: 400;
+    letter-spacing: -2.3px;
+}
+
+.hero-copy p {
+    font-size: clamp(16px, 1.28vw, 20px);
+    line-height: 1.43;
+    letter-spacing: -0.35px;
+}
+
+/* Hero Buttons */
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    margin-top: 24px;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 44px;
+    padding: 0 22px;
+
+    border-radius: 11px;
+
+    font-family: "Courier New", monospace;
+    font-size: 15px;
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    filter: brightness(0.96);
+}
+
+.button-orange {
+    background: var(--orange);
+    color: #111;
+}
+
+.button-dark {
+    background: #050505;
+    color: #fff;
+}
+
+/* Customer Logos */
+.customer-logos {
+    display: flex;
+    align-items: center;
+    gap: clamp(18px, 2vw, 32px);
+
+    margin-top: 61px;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.shed {
+    font-family: Georgia, serif;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.horay {
+    font-size: 17px;
+    letter-spacing: -1.5px;
+}
+
+.generation {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    font-size: 12px;
+    line-height: 1.05;
+}
+
+.generation-symbol {
+    font-family: Georgia, serif;
+    font-size: 27px;
+}
+
+.bloom-mark {
+    display: inline-block;
+
+    padding-left: 5px;
+
+    border-left: 4px double #111;
+
+    font-family: Georgia, serif;
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+/* AI Sphere Position */
+.visual {
+    position: absolute;
+
+    top: 12.8%;
+    right: 4.1%;
+
+    display: grid;
+    place-items: center;
+
+    width: min(47vw, 735px);
+    aspect-ratio: 1;
+}
+
+/* AI Sphere */
+.orb {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 85%,
+            rgba(255, 126, 45, 0.94) 0%,
+            rgba(255, 149, 83, 0.62) 20%,
+            transparent 47%
+        ),
+        radial-gradient(
+            ellipse at 49% 45%,
+            #303234 0%,
+            #3b3d3f 42%,
+            #c5c5c5 73%,
+            rgba(255, 255, 255, 0.9) 100%
+        );
+
+    box-shadow:
+        0 22px 65px rgba(255, 119, 43, 0.25),
+        inset 0 0 42px rgba(255, 255, 255, 0.62);
+}
+
+/* Dots Inside Sphere */
+.orb-grid {
+    position: absolute;
+    inset: 7% 9% 13%;
+
+    border-radius: 50%;
+    opacity: 0.95;
+
+    background-image: radial-gradient(
+        circle,
+        transparent 0 7px,
+        rgba(255, 143, 75, 0.9) 7.5px 8.5px,
+        transparent 9px
+    );
+
+    background-size: 36px 34px;
+
+    transform:
+        perspective(450px)
+        rotateX(8deg)
+        rotateZ(-10deg);
+
+    mask-image: radial-gradient(
+        ellipse,
+        black 48%,
+        transparent 75%
+    );
+}
+
+.orb-grid::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        radial-gradient(
+            circle,
+            #ff6d69 0 4px,
+            transparent 5px
+        ),
+        radial-gradient(
+            circle,
+            #ff9c35 0 5px,
+            transparent 6px
+        );
+
+    background-size: 93px 76px, 117px 95px;
+    background-position: 18px 12px, 44px 30px;
+}
+
+/* Search Question Card */
+.query-card {
+    position: absolute;
+    z-index: 2;
+
+    top: 40%;
+    left: 24%;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    width: 53%;
+    min-height: 40px;
+    padding: 0 12px;
+
+    color: #171717;
+    background: var(--orange);
+    border-radius: 10px;
+
+    font-size: clamp(9px, 0.78vw, 13px);
+    white-space: nowrap;
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Search Icon */
+.search-icon {
+    flex: 0 0 auto;
+
+    display: grid;
+    place-items: center;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+    color: #0872d5;
+    background: #fff;
+
+    font-size: 19px;
+}
+
+/* Analysis Card */
+.analysis-card {
+    position: absolute;
+    z-index: 2;
+
+    top: 46.5%;
+    left: 24%;
+
+    width: 53%;
+    padding: 18px 19px 20px;
+
+    border-radius: 12px;
+    background: #fff;
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.analysis-label {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #c18a53;
+    font-size: 11px;
+}
+
+/* Analysis Metrics */
+.metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.metric {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.metric-name {
+    color: #393939;
+
+    font-family: "Courier New", monospace;
+    font-size: clamp(8px, 0.75vw, 12px);
+    white-space: nowrap;
+}
+
+.metric-value {
+    font-size: clamp(12px, 1vw, 16px);
+    white-space: nowrap;
+}
+
+.metric-value small {
+    display: inline-block;
+
+    padding: 3px 4px;
+
+    border-radius: 4px;
+
+    font-size: 9px;
+}
+
+.positive {
+    color: #2e9673;
+    background: #d7f8ec;
+}
+
+/* Mentioned Brand Icons */
+.brand-icons {
+    display: flex;
+    gap: 6px;
+
+    font-size: 19px;
+    line-height: 1;
+}
+
+.brand-icons b:first-child {
+    color: #ed4e45;
+    font-family: Georgia, serif;
+}
+
+.brand-icons b:last-child {
+    color: #1689b5;
+    font-size: 15px;
+}
+
+/* Medium Screens */
+@media (max-width: 1050px) {
+    .navbar {
+        padding-inline: 3%;
+    }
+
+    .nav-links {
+        gap: 14px;
+        font-size: 12px;
+    }
+
+    .login,
+    .nav-cta {
+        padding-inline: 12px;
+    }
+
+    .visual {
+        right: 1%;
+        width: 51vw;
+    }
+
+    .hero-copy {
+        left: 4%;
+    }
+}
+
+/* Mobile Screens */
+@media (max-width: 760px) {
+    .hero {
+        min-height: 100vh;
+        padding-bottom: 40px;
+        overflow: hidden;
+
+        background:
+            radial-gradient(
+                ellipse at 75% 70%,
+                rgba(255, 255, 255, 0.75),
+                transparent 42%
+            ),
+            linear-gradient(
+                180deg,
+                #f1f1f0 0%,
+                #f1f1f0 42%,
+                #f7c5a4 68%,
+                #ff5a00 100%
+            );
+    }
+
+    .navbar {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+
+        padding: 18px 6%;
+    }
+
+    .brand-mark {
+        width: 38px;
+        height: 38px;
+        border-width: 5px;
+    }
+
+    .nav-links {
+        width: 100%;
+        overflow-x: auto;
+
+        gap: 18px;
+        padding: 10px 0;
+
+        background: transparent;
+    }
+
+    .nav-links a {
+        flex-shrink: 0;
+    }
+
+    .vertical-line {
+        display: none;
+    }
+
+    .hero-copy {
+        position: relative;
+        top: auto;
+        left: auto;
+
+        max-width: 100%;
+        padding: 44px 6% 0;
+    }
+
+    .hero-copy h1 {
+        margin-bottom: 22px;
+
+        font-size: clamp(39px, 9vw, 54px);
+        letter-spacing: -1.8px;
+    }
+
+    .hero-copy p {
+        font-size: 17px;
+    }
+
+    .desktop-break {
+        display: none;
+    }
+
+    .customer-logos {
+        flex-wrap: wrap;
+        gap: 22px;
+
+        margin-top: 34px;
+    }
+
+    .visual {
+        position: relative;
+        top: auto;
+        right: auto;
+
+        width: min(88vw, 540px);
+        margin: 34px auto 0;
+    }
+
+    .query-card,
+    .analysis-card {
+        left: 16%;
+        width: 68%;
+    }
+
+    .query-card {
+        top: 39%;
+        min-height: 34px;
+
+        font-size: clamp(8px, 2.1vw, 12px);
+    }
+
+    .analysis-card {
+        top: 46%;
+        padding: 12px;
+    }
+
+    .metric-name {
+        font-size: clamp(7px, 1.7vw, 10px);
+    }
+
+    .metric-value {
+        font-size: clamp(10px, 2.4vw, 14px);
+    }
+}
+
+/* Small Phones */
+@media (max-width: 420px) {
+    .hero-actions {
+        gap: 10px;
+    }
+
+    .button {
+        padding-inline: 15px;
+        font-size: 13px;
+    }
+
+    .customer-logos {
+        gap: 16px;
+    }
+
+    .analysis-card {
+        padding: 9px;
+    }
+
+    .metrics {
+        gap: 5px;
+    }
+
+    .metric-value small {
+        padding: 2px;
+        font-size: 7px;
+    }
+}
